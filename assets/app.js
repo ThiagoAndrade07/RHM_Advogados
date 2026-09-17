@@ -14,6 +14,19 @@
     link.rel = 'noopener noreferrer';
   });
 
+  document.querySelectorAll('[data-service-card]').forEach((card) => {
+    const open = () => window.openModal?.(card.dataset.serviceCard);
+    card.addEventListener('click', (event) => {
+      if (!event.target.closest('button')) open();
+    });
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        open();
+      }
+    });
+  });
+
   const form = document.querySelector('#contact-form');
   const status = document.querySelector('#contact-status');
   if (!form || !status) return;

@@ -16,9 +16,9 @@ assert(!html.includes('cdn.tailwindcss.com'), 'Tailwind de desenvolvimento prese
 assert(!html.includes('fonts.googleapis.com'), 'Fonte externa desnecessária presente');
 assert(!html.includes('AQ.Ab'), 'Credencial não deve estar no site');
 assert(html.includes('id="contact-form"'), 'Formulário ausente');
-assert(html.includes('id="prejuizo"') && html.includes('placeholder="Ex.: R$ 5 mil a R$ 20 mil'), 'Campo livre de prejuízo ausente');
-assert.equal((html.match(/name="Veículos envolvidos"/g) || []).length, 7, 'Opções de veículos incompletas');
-assert.equal((html.match(/type="radio"/g) || []).length, 6, 'Opções de feridos ou seguro incompletas');
+assert(!html.includes('data-acidente') && !html.includes('Houve feridos') && !html.includes('Veículos envolvidos'), 'Campos de acidente não devem constar na tela do Stitch');
+assert(html.includes('Descreva seu caso ou problema (opcional)') && html.includes('Conte brevemente sobre sua situação ou dúvida jurídica...'), 'Texto do formulário do Stitch ausente');
+assert.equal((html.match(/data-service-card/g) || []).length, 9, 'Cards de atuação devem abrir o modal inteiro');
 assert((html.match(/data-whatsapp-cta/g) || []).length >= 4, 'CTAs de WhatsApp incompletos');
 const contactConfig = await readFile(path.join(root, 'assets/site-config.js'), 'utf8');
 const appScript = await readFile(path.join(root, 'assets/app.js'), 'utf8');
