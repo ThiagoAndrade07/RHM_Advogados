@@ -3,12 +3,12 @@
 **Site:** [thiagoandrade07.github.io/RHA_Advogados](https://thiagoandrade07.github.io/RHA_Advogados/)  
 **Repositório:** [ThiagoAndrade07/RHA_Advogados](https://github.com/ThiagoAndrade07/RHA_Advogados)
 
-Site estático em HTML, CSS e JavaScript, baseado na tela **RHM Advogados - Site Oficial Completo** do projeto **Sequential Website Content Assembler**, no Stitch.
+Site estático em HTML, CSS e JavaScript, baseado na tela **RHM Advogados - Versão Sessão 44 com Seções Intercaladas** do projeto **RHM ADVOGADOS**, no Stitch.
 
 Projeto de origem: `13606967095748532257`  
-Tela de origem: `7c090c7d3e33438bbccc582b90d434a3`
+Tela de origem: `4ba24fd45dc84f9fa2bcdbc0ee1db79b`
 
-As fotos, a marca, a tipografia, as cores, os textos e a ordem das seções foram preservados. Foram adicionados menu móvel, navegação por âncoras, acessibilidade de teclado, diálogos para as áreas de atuação e empacotamento para o GitHub Pages. Não há dependência do MCP ou de uma chave de API para executar ou hospedar o site.
+As fotos, a marca, a tipografia, as cores, os textos e a ordem das seções foram preservados. Foram adicionados menu móvel, navegação por âncoras, diálogos para as áreas de atuação, formulário de acidentes e empacotamento para o GitHub Pages. Não há dependência do MCP ou de uma chave de API para executar ou hospedar o site.
 
 ## Visualizar
 
