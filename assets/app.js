@@ -6,6 +6,12 @@
   const validWhatsApp = /^\d{10,15}$/.test(whatsapp);
   const greeting = 'Olá! Vim pelo site da RHM Advogados e gostaria de falar com a equipe sobre uma possível assessoria jurídica.';
   const makeWhatsAppUrl = (message) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
+  document.querySelectorAll('[data-form-cta]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
   document.querySelectorAll('[data-whatsapp-cta]').forEach((link) => {
     if (!validWhatsApp) return;

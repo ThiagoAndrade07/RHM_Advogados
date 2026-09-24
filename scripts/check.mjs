@@ -21,13 +21,16 @@ assert(html.includes('Descreva seu caso ou problema (opcional)') && html.include
 assert.equal((html.match(/data-service-card/g) || []).length, 8, 'Os cards restantes devem abrir o modal inteiro');
 assert(html.includes('href="acidentes-transito.html"'), 'Card de acidentes de trânsito deve direcionar à página dedicada');
 await access(path.join(root, 'acidentes-transito.html'));
-assert((html.match(/data-whatsapp-cta/g) || []).length >= 4, 'CTAs de WhatsApp incompletos');
+assert((html.match(/data-form-cta/g) || []).length >= 6, 'CTAs devem levar ao formulário');
+assert(html.includes('id="lgpd-consent"') && html.includes('privacidade.html'), 'Consentimento LGPD ausente');
+await access(path.join(root, 'privacidade.html'));
 const contactConfig = await readFile(path.join(root, 'assets/site-config.js'), 'utf8');
 const appScript = await readFile(path.join(root, 'assets/app.js'), 'utf8');
 assert(contactConfig.includes("whatsapp: '5541992031547'"), 'Número de WhatsApp ausente');
 assert(appScript.includes("window.open(makeWhatsAppUrl(message), '_blank'"), 'Envio em nova aba ausente');
 const built = await readFile(path.join(root, 'dist/index.html'), 'utf8');
 assert(built.includes('RHM Advogados') && built.includes('contact-form'), 'Build incompleto');
+await access(path.join(root, 'dist', 'privacidade.html'));
 const builtTrafficPage = await readFile(path.join(root, 'dist/acidentes-transito.html'), 'utf8');
 assert(builtTrafficPage.includes('id="video-seguro"') && builtTrafficPage.includes('id="video-indenizacoes"') && builtTrafficPage.includes('id="video-providencias"'), 'Página de acidentes de trânsito incompleta');
 console.log(`OK: ${ids.length} IDs, design Stitch, formulário e WhatsApp verificados.`);
