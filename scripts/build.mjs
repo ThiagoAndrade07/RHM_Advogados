@@ -7,6 +7,7 @@ const output = path.join(root, 'dist');
 await mkdir(output, { recursive: true });
 await cp(path.join(root, 'assets'), path.join(output, 'assets'), { recursive: true });
 await cp(path.join(root, '.nojekyll'), path.join(output, '.nojekyll'));
+await cp(path.join(root, 'acidentes-transito.html'), path.join(output, 'acidentes-transito.html'));
 let html = await readFile(path.join(root, 'index.html'), 'utf8');
 const configuredUrl = process.env.SITE_URL?.trim();
 if (configuredUrl) {
