@@ -29,5 +29,5 @@ assert(appScript.includes("window.open(makeWhatsAppUrl(message), '_blank'"), 'En
 const built = await readFile(path.join(root, 'dist/index.html'), 'utf8');
 assert(built.includes('RHM Advogados') && built.includes('contact-form'), 'Build incompleto');
 const builtTrafficPage = await readFile(path.join(root, 'dist/acidentes-transito.html'), 'utf8');
-assert(builtTrafficPage.includes('id="videoContainer"') && builtTrafficPage.includes('wa.me/5541992031547'), 'Página de acidentes de trânsito incompleta');
+assert(builtTrafficPage.includes('id="video-seguro"') && builtTrafficPage.includes('id="video-indenizacoes"') && builtTrafficPage.includes('id="video-providencias"'), 'Página de acidentes de trânsito incompleta');
 console.log(`OK: ${ids.length} IDs, design Stitch, formulário e WhatsApp verificados.`);
